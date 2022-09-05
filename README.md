@@ -10,7 +10,7 @@
 
 ## RPC의 컴포넌트
 
-- ![[Pasted image 20220905011357.png]]
+![image](https://user-images.githubusercontent.com/42285463/188339449-a4915456-a496-4ced-9bf9-d679288efe8a.png)
 
 ## IDL
 
