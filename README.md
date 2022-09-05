@@ -142,13 +142,28 @@ rpc BidiHello(stream HelloRequest returns (stream HelloResponse)
 
 - Token기반 인증 (with Google) Google API 에 gRPC 접근할때는 OAuth2 token과 같은 access token이 필요하다.
 - gRPC는 전체 gRPC 채널을 생성하거나 개별 call을 만들 때 사용되는 Credentials 오브젝트에 기반하여 인증 API를 제공한다.
+## gRPC - 인증 Authentication
+
+-   Token기반 인증 (with Google) Google API 에 gRPC 접근할때는 OAuth2 token과 같은 access token이 필요하다.
+-   gRPC는 전체 gRPC 채널을 생성하거나 개별 call을 만들 때 사용되는 Credentials 오브젝트에 기반하여 인증 API를 제공한다.
+
+## gRPC & nestJS
+- nestjs에서는 MSA를 지원하는데, 이때에는 transporter로 내장 transport layer 구현을 할 수 있다.
+- 이 transporter을 통해, 서로 다른 microservice 인스턴스간 메세지 전송이 가능하다.
+
+## gRPC Gateway
+![image](https://user-images.githubusercontent.com/42285463/188362582-f2375669-2c08-4154-8517-14b02a3fc00c.png)
+- protoc plugin
+- REST API로 들어온 요청을 gRPC 포맷으로 변환하는 reverse-proxy 역할을 하는 서버 코드를 생성해준다. → HTTP요청을 gRPC로 변환시켜주므로, 외부의 REST 호출 가능
 
 참고 자료
-
-- https://juneyr.dev/2018-07-30/what-is-grpc
-- https://sukill.tistory.com/85
-- https://blog.naver.com/siniphia/222486033775
-- https://blog.naver.com/siniphia/222486088548
-- https://grpc.io/docs/languages/node/basics/
-- https://github.com/grpc/grpc-node
-- https://www.trendmicro.com/en_ae/devops/22/f/grpc-api-tutorial.html
+-   [https://juneyr.dev/2018-07-30/what-is-grpc](https://juneyr.dev/2018-07-30/what-is-grpc)
+-   [https://sukill.tistory.com/85](https://sukill.tistory.com/85)
+-   [https://blog.naver.com/siniphia/222486033775](https://blog.naver.com/siniphia/222486033775)
+-   [https://blog.naver.com/siniphia/222486088548](https://blog.naver.com/siniphia/222486088548)
+-   [https://grpc.io/docs/languages/node/basics/](https://grpc.io/docs/languages/node/basics/)
+-   [https://github.com/grpc/grpc-node](https://github.com/grpc/grpc-node)
+-   [https://www.trendmicro.com/en_ae/devops/22/f/grpc-api-tutorial.html](https://www.trendmicro.com/en_ae/devops/22/f/grpc-api-tutorial.html)
+-   [https://docs.nestjs.com/microservices/grpc#grpc](https://docs.nestjs.com/microservices/grpc#grpc)
+-   [https://github.com/grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
+-   [https://litaro.tistory.com/entry/go-gRPC-Server](https://litaro.tistory.com/entry/go-gRPC-Server)
